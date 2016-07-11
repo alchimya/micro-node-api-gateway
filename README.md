@@ -158,4 +158,5 @@ where:
 - serviceRegistry.databse: configure here your MongoDb connection params. This database represents your Service Registry
 
 
+![ScreenShot](https://raw.github.com/alchimya/micro-node-api-gateway/master/micro-node-api-gateway.gif)
 
