@@ -5,12 +5,12 @@ This porject/turotial explains how to implement a NodeJs Api Gateway, into a Mic
 
 ![ScreenShot](https://raw.github.com/alchimya/micro-node-api-gateway/master/Microservices_Architecture.png)
 
-Actually, this project can be described as a complete Microservices Architecture containing four different microservices accessible via Api Gateway and Service Registry.
+Actually, this project can be described as a complete Microservices Architecture containing four different microservices accessible via Api Gateway and discovered with a  Service Registry.
 
 #How to setup and configure
 To <b>setup</b> the project, it is enough to launch the the bash script <b/>ServicesSetup.sh</b>
 <br/>
-The <b>configuration</b> it is a bit tedious but vety easy. In order you need to open all the <b>config.json</b> file that you will find in to each project folder (service and api-gateway) and to setup the MondoDB configuration within the serviceRegistry object
+The <b>configuration</b> it is a bit tedious but it is very easy. In order you need to open all the <b>config.json</b> file that you will find in to each project folder (services and api-gateway) and setup the MondoDB configuration within the serviceRegistry object:
 
 ```javascript
   "serviceRegistry":{
@@ -27,10 +27,10 @@ The <b>configuration</b> it is a bit tedious but vety easy. In order you need to
       }
   }
 ```
-A more dtailed description of the complete configuration is reported within the section at the bottom of this document
+A more dtailed description of the configuration is reported in to the section at the bottom of this document.
 
 #How to use
-To start all services you must launch the bash script <b>ServicesStart.sh</b>. This script will provide to launch five differente clustered instances of a Node servce as reported below:
+To start all services you must launch the bash script <b>ServicesStart.sh</b>. This script will provide to launch five differente clustered instances of a Node server as reported below:
 <br/>
 
 Service         |Port 	     | Service Route | Api Gateway Ruote (8080)
@@ -39,9 +39,10 @@ service-login		|	8081	     | /api/login	   | /api/account/login
 service-signup  |	8082	     | /api/signup	 | /api/account/signup         	      
 service-orders	|	8084	     | /api/orders	 | /api/crm/orders    	      
 service-log		  |	8084	     | /api/log	     |	     ----- 
+api-gateway		  |	8080	     |   ----	       |	     ----- 
 
 <br/>
-For this tutorial, it is allowed to access directly (Service Route) to the services, but depending of your requirements you can block this access, alllowing only this access via Api Gateway (Api Gateway Ruote) listening in this case to the port 8080.
+For this tutorial, it is allowed to access directly (see Service Route) to the services, but, depending of your requirements, you can block this access, alllowing only the access via Api Gateway (see Api Gateway Ruote) that for this project is listening to the port 8080.
 
 #Api Gateway Configuraiton 
 Here, a detailed description of the <b>config.json</b> file for the Pai Gateway
